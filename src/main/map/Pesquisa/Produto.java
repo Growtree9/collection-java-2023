@@ -1,7 +1,5 @@
 package main.map.Pesquisa;
 
-import java.util.Objects;
-
 public class Produto {
 
     private String nome;

@@ -1,14 +1,14 @@
 package main.list.OperacoesBasicas;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class ListaTarefas {
 
-    private List<Tarefa> listaDeTarefas = new ArrayList();
+    private List<Tarefa> listaDeTarefas;
 
     public ListaTarefas() {
+        this.listaDeTarefas = new ArrayList<>();
     }
 
     public void adicionarTarefa(String descricao){
@@ -16,12 +16,10 @@ public class ListaTarefas {
     }
 
     public void removerTarefa(String descricao){
-        List<Tarefa> tarefasParaRemover = new ArrayList();
+        List<Tarefa> tarefasParaRemover = new ArrayList<>();
 
         if(!listaDeTarefas.isEmpty()) {
-            Iterator tarefa = listaDeTarefas.iterator();
-            while (tarefa.hasNext()) {
-                Tarefa t = (Tarefa) tarefa.next();
+                for (Tarefa t : listaDeTarefas){
                 if (t.getDescrição().equalsIgnoreCase(descricao)) {
                     tarefasParaRemover.add(t);
                 }
@@ -58,6 +56,4 @@ public class ListaTarefas {
         listaTarefa.removerTarefa("Estudar para o exame");
         System.out.println("Agora você tem " + listaTarefa.obterNumeroTotalTarefas() + " tarefas na lista:");
     }
-
-
 }

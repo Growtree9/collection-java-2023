@@ -11,25 +11,26 @@ public class OrdenacaoPessoas {
         this.listaDePessoas = new ArrayList<>();
     }
 
-    public void adicionarPessoa(String nome, int idade, double altura){
+    public void adicionarPessoa(String nome, int idade, double altura) {
         listaDePessoas.add(new Pessoa(nome, idade, altura));
     }
-     //Ordena as pessoas da lista por idade usando a interface Comparable.
-     public List<Pessoa> ordenarPorIdade(){
+
+    // Ordena as pessoas da lista por idade usando a interface Comparable.
+    public List<Pessoa> ordenarPorIdade() {
         List<Pessoa> pessoasPorIdade = new ArrayList<>(listaDePessoas);
 
-        if (!listaDePessoas.isEmpty()){
+        if (!listaDePessoas.isEmpty()) {
             Collections.sort(pessoasPorIdade);
             return pessoasPorIdade;
         } else {
             throw new RuntimeException("A lista está vazia!");
         }
-     }
+    }
 
-    public  List ordenarPorAltura(){
+    public List<Pessoa> ordenarPorAltura() {
         List<Pessoa> pessoasPorAltura = new ArrayList<>(listaDePessoas);
 
-        if(!listaDePessoas.isEmpty()){
+        if (!listaDePessoas.isEmpty()) {
             Collections.sort(pessoasPorAltura, new ComparatorPorAltura());
             return pessoasPorAltura;
         } else {

@@ -2,10 +2,9 @@ package main.list.Ordenacao;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
-public class OrdenacaoNumeros   {
+public class OrdenacaoNumeros {
 
     private List<Integer> listaDeNumeros;
 
@@ -13,14 +12,14 @@ public class OrdenacaoNumeros   {
         this.listaDeNumeros = new ArrayList<>();
     }
 
-    public void adicionarNumero(int numero){
+    public void adicionarNumero(int numero) {
         listaDeNumeros.add(numero);
     }
 
-    public List ordenarAscendente(){
+    public List<Integer> ordenarAscendente() {
         List<Integer> ascendente = new ArrayList<>(listaDeNumeros);
 
-        if (!listaDeNumeros.isEmpty()){
+        if (!listaDeNumeros.isEmpty()) {
             Collections.sort(ascendente);
             return ascendente;
 
@@ -29,10 +28,10 @@ public class OrdenacaoNumeros   {
         }
     }
 
-    public List ordenarDescendente(){
+    public List<Integer> ordenarDescendente() {
         List<Integer> descendente = new ArrayList<>(listaDeNumeros);
 
-        if (!listaDeNumeros.isEmpty()){
+        if (!listaDeNumeros.isEmpty()) {
             descendente.sort(Collections.reverseOrder());
             return descendente;
         } else {
@@ -75,6 +74,4 @@ public class OrdenacaoNumeros   {
         numeros.exibirNumeros();
     }
 
-
 }
-

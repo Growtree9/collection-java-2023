@@ -1,7 +1,5 @@
 package main.list.Pesquisa;
 
-import java.util.Date;
-
 public class Livro {
 
     private String título;
