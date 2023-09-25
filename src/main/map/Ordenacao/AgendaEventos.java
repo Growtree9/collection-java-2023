@@ -8,7 +8,7 @@ import java.util.TreeMap;
 
 public class AgendaEventos {
 
-    Map<LocalDate, Evento> eventoMap;
+    private Map<LocalDate, Evento> eventoMap;
 
     public AgendaEventos() {
         this.eventoMap = new HashMap<>();
@@ -20,11 +20,12 @@ public class AgendaEventos {
 
     public void exibirAgenda(){
         Map<LocalDate, Evento> eventoTreeMap = new TreeMap<>(eventoMap);
-        for (Map.Entry<LocalDate, Evento> entry : eventoMap.entrySet()) {
-            LocalDate dataEvento = entry.getKey();
-            Evento evento = entry.getValue();
-            System.out.println("Data: " + dataEvento + ", Evento: " + evento.getNome() + ", Atração: " + evento.getAtracao());
-        }
+        System.out.println("\n" + eventoTreeMap);
+        // for (Map.Entry<LocalDate, Evento> entry : eventoTreeMap.entrySet()) {
+        //     LocalDate dataEvento = entry.getKey();
+        //     Evento evento = entry.getValue();
+        //     System.out.println("\nData: " + dataEvento + ", Evento: " + evento.getNome() + ", Atração: " + evento.getAtracao());
+        // }
     }
 
     public void obterProximoEvento(){
@@ -33,15 +34,14 @@ public class AgendaEventos {
         Evento proximoEvento = null;
 
         for (Map.Entry<LocalDate, Evento> entry : eventoMap.entrySet()) {
-            LocalDate dataEvento = entry.getKey();
-            if (dataEvento.isEqual(dataAtual) || dataEvento.isAfter(dataAtual)) {
-                proximaData = dataEvento;
+            if (entry.getKey().isEqual(dataAtual) || entry.getKey().isAfter(dataAtual)) {
+                proximaData = entry.getKey();
                 proximoEvento = entry.getValue();
                 break;
             }
         }
         if (proximoEvento != null) {
-            System.out.println("O próximo evento: " + proximoEvento.getNome() + " acontecerá na data " + proximaData);
+            System.out.println("\nO próximo evento: " + proximoEvento + " acontecerá na data " + proximaData);
         } else {
             System.out.println("Não há eventos futuros na agenda.");
         }

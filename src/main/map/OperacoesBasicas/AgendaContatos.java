@@ -10,7 +10,6 @@ public class AgendaContatos {
         this.contatos = new HashMap<>();
     }
 
-
     public void adicionarContato(String nome, Integer telefone){
         contatos.put(nome, telefone);
     }

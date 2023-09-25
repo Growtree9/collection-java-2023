@@ -15,6 +15,10 @@ public class CatalogoLivros {
         catalogoDeLivros.add(new Livro(titulo, autor, anoPublicacao));
     }
 
+    public List<Livro> obterTodosLivros() {
+        return catalogoDeLivros;
+    }
+
     public List<Livro> pesquisarPorAutor(String autor) {
 
         List<Livro> livrosDoAutor = new ArrayList<>();
@@ -69,17 +73,17 @@ public class CatalogoLivros {
         CatalogoLivros catalogoLivros = new CatalogoLivros();
 
         // Adicionando livros ao catálogo
-        catalogoLivros.adicionarLivro("Microsserviços Prontos Para a Produção", "Susan J. Fowler", 2017);
-        catalogoLivros.adicionarLivro("Java Guia do Programador", "Peter Jandl Junior", 2021);
-        catalogoLivros.adicionarLivro("Código Limpo", "Robert C. Martin", 2009);
-        catalogoLivros.adicionarLivro("O Codificador Limpo", "Robert C. Martin", 2012);
+        catalogoLivros.adicionarLivro("\nMicrosserviços Prontos Para a Produção", "Susan J. Fowler", 2017);
+        catalogoLivros.adicionarLivro("\nJava Guia do Programador", "Peter Jandl Junior", 2021);
+        catalogoLivros.adicionarLivro("\nCódigo Limpo", "Robert C. Martin", 2009);
+        catalogoLivros.adicionarLivro("\nO Codificador Limpo", "Robert C. Martin", 2012);
 
         // Exibindo livros pelo mesmo autor
-        System.out.println(catalogoLivros.pesquisarPorAutor("Robert C. Martin"));
+        System.out.println(catalogoLivros.pesquisarPorAutor("\nRobert C. Martin"));
 
         // Exibindo livros pelo mesmo autor (caso em que não há livros de um autor
         // específico)
-        System.out.println(catalogoLivros.pesquisarPorAutor("Autor Inexistente"));
+        System.out.println(catalogoLivros.pesquisarPorAutor("\nAutor Inexistente"));
 
         // Exibindo livros dentro de um intervalo de anos
         System.out.println(catalogoLivros.pesquisarPorIntervaloAnos(2010, 2022));

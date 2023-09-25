@@ -1,4 +1,4 @@
-package main.set.OperacoesBassicas;
+package main.set.OperacoesBasicas;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -7,37 +7,35 @@ public class ConjuntoPalavrasUnicas {
 
     private Set<String> palavrasUnicaSet;
 
-
-
     public ConjuntoPalavrasUnicas() {
         this.palavrasUnicaSet = new HashSet<>();
     }
 
-    public void adicionarPalavra(String palavra){
+    public void adicionarPalavra(String palavra) {
         palavrasUnicaSet.add(palavra);
     }
 
-    public void removerPalavra(String palavra){
-        if (!palavrasUnicaSet.isEmpty()){
-            if(palavrasUnicaSet.contains(palavra)){
+    public void removerPalavra(String palavra) {
+        if (!palavrasUnicaSet.isEmpty()) {
+            if (palavrasUnicaSet.contains(palavra)) {
                 palavrasUnicaSet.remove(palavra);
-            } else{
-                System.out.println("Palavra não encontrada no conjunto!");
+            } else {
+                System.out.println("Palavra " + palavra + " não encontrada no conjunto!");
             }
 
-        }else {
+        } else {
             throw new RuntimeException("O conjunto está vazio!");
         }
     }
-    
-    public boolean verificarPalavra(String palavra){
+
+    public boolean verificarPalavra(String palavra) {
         return palavrasUnicaSet.contains(palavra);
     }
 
     public void exibirPalavrasUnicas() {
-        if (!palavrasUnicaSet.isEmpty()){
+        if (!palavrasUnicaSet.isEmpty()) {
             System.out.println(palavrasUnicaSet);
-        }else {
+        } else {
             System.out.println("O conjunto está vazio.");
         }
     }

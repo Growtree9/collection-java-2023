@@ -1,5 +1,4 @@
-package main.set.OperacoesBassicas;
-
+package main.set.OperacoesBasicas;
 
 import java.util.Objects;
 
@@ -13,15 +12,20 @@ public class Convidado {
         this.codigoConvite = codigoConvite;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
     public int getCodigoConvite() {
         return codigoConvite;
     }
 
-
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Convidado)) return false;
+        if (this == o)
+            return true;
+        if (!(o instanceof Convidado))
+            return false;
         Convidado convidado = (Convidado) o;
         return getCodigoConvite() == convidado.getCodigoConvite();
     }
@@ -33,11 +37,10 @@ public class Convidado {
 
     @Override
     public String toString() {
-        return "{" +
-                "" + nome + '\'' +
-                ", " + codigoConvite +
+        return "Convidado{" +
+                "nome='" + nome + '\'' +
+                ", codigoConvite=" + codigoConvite +
                 '}';
     }
-
 
 }
